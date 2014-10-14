@@ -3,6 +3,7 @@ class HomeController < ApplicationController
   around_filter :shopify_session
   
   def index
+    logger.debug "In home:index"
   end
 
   def modal

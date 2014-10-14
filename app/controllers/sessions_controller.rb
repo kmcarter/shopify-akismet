@@ -7,11 +7,13 @@ class SessionsController < ApplicationController
 
   def show
     if response = request.env['omniauth.auth']
+      logger.debug "ominauth.auth found"
       sess = ShopifyAPI::Session.new(params[:shop], response['credentials']['token'])
       session[:shopify] = sess        
       flash[:notice] = "Logged in"
       redirect_to return_address
     else
+      logger.debug "ominauth.auth NOT found :("
       flash[:error] = "Could not log in to Shopify store."
       redirect_to :action => 'new'
     end
@@ -25,9 +27,11 @@ class SessionsController < ApplicationController
     # here. Open the app/views/commom/iframe_redirect.html.erb file to understand why.
     #
     if shop_name = sanitize_shop_param(params)
+      logger.debug "Redirecting iframe"
       @redirect_url = "/auth/shopify?shop=#{shop_name}"
       render "/common/iframe_redirect", :format => [:html], layout: false
     else
+      logger.debug "Redirecting to return_address (sanitization failed)"
       redirect_to return_address
     end
   end

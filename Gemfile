@@ -16,10 +16,9 @@ group :assets do
 end
 
 group :development, :test do
-  gem "less-rails-bootstrap"
-  gem "therubyracer", :platforms => :ruby
   gem 'pry-rails'
 end
 
 group :production do
+  gem 'rails_12factor'
 end
