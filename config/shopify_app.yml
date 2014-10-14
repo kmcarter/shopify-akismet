@@ -1,0 +1,7 @@
+development:
+  api_key: 'f993175f33cf7827f8470f5eeabc885b'
+  secret: '070723db37d0650f646242eade100b79'
+  
+production:
+  api_key: 'f993175f33cf7827f8470f5eeabc885b'
+  secret: '070723db37d0650f646242eade100b79'

@@ -14,5 +14,7 @@
 /log/*.log
 /tmp
 
-# Ignore application configurations
-/config/shopify_app.yml
+# ignore SSL certificates
+*.key
+*.csr
+*.crt
