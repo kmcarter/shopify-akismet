@@ -6,6 +6,8 @@ gem 'rails', '3.2.18'
 gem 'shopify_app'
 gem 'jquery-rails'
 gem 'quiet_assets'
+gem 'thin'
+gem 'mysql2'
 
 group :assets do
   gem 'sass-rails'
@@ -14,13 +16,10 @@ group :assets do
 end
 
 group :development, :test do
-  gem 'thin'
   gem "less-rails-bootstrap"
   gem "therubyracer", :platforms => :ruby
   gem 'pry-rails'
-  gem 'sqlite3'
 end
 
 group :production do
-  gem 'pg'
 end
